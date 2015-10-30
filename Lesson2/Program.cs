@@ -16,7 +16,7 @@ namespace Lesson2
         static void Main(string[] args)
         {
             //TestParse();
-            TestPerson();
+            TestPerson();  
 
             Console.ReadKey();
         }

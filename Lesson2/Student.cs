@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 namespace Lesson2
 {
     //refference anu mimtitebliani tipi
-    class Student
+    abstract class Student : Person
     {
         #region fields
-        public int Age;
-        public string Name;
-        public string LastName;
         public int Course;
         public int[] Credits;
         #endregion
@@ -54,6 +51,9 @@ namespace Lesson2
             }
         }
 
+        public abstract bool Passed();
+
+
         #endregion
 
         #region static members
@@ -64,6 +64,18 @@ namespace Lesson2
             StudentCount++;
         }
         #endregion
+
+
+
+        public override string displayName(string lang)
+        {
+            
+            if (lang == "ge")
+                return String.Format("სტუდენტი: {0} {1}", Name, LastName);
+            else if (lang == "en")
+                return String.Format("student: {0} {1}", Name, LastName);
+            else return "";
+        }
     }
     //value type. aqvs yvelaferi rac klass ar aqvs memkvidreoba da ar aris mimtitebeli.
     struct Lesson
@@ -71,6 +83,38 @@ namespace Lesson2
         public days day;
         public int time;
     }
+
+
+
+    class Bachelor : Student
+    {
+        public override string ToString()
+        {
+            return "Bachelor : "  +  Name + " " + LastName;
+        }
+
+        public override bool Passed()
+        {
+            return SummeryCredits >= 250;
+        }
+    }
+
+    class Master : Student
+    {
+        public override  bool Passed()
+        {
+            return SummeryCredits >= 100;
+        }
+
+        public override string ToString()
+        {
+            return "Master : " + Name + " " + LastName;
+        }
+
+        public string Document;
+    }
+
+
 
     //enum
     enum days

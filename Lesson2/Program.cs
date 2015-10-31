@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,25 +11,90 @@ namespace Lesson2
     {
         static void print(string s)
         {
+
             Console.WriteLine(s);
         }
 
         static void Main(string[] args)
         {
-            //TestParse();
-            TestString();
-
+            //TestTimeSpan();
+            TestDateTime();
             Console.ReadKey();
         }
+
+
+        static void TestTimeSpan()
+        {
+            TimeSpan t1 = new TimeSpan(2, 30, 0);  // orsaatinaxevari
+            //Console.WriteLine(t1 );
+            TimeSpan t2 = new TimeSpan(10, 2, 30, 0);  // orsaatinaxevari
+            //Console.WriteLine(t2);
+            t1 = TimeSpan.FromDays(10);  // ati dge
+            //   Console.WriteLine(t1);
+            t1 = TimeSpan.FromHours(2);  // ati dge
+            //  Console.WriteLine(t1);
+            t1 = TimeSpan.FromMinutes(30);  // ati dge
+            // Console.WriteLine(t1);
+            t1 = TimeSpan.FromSeconds(30);  // ati dge
+            // Console.WriteLine(t1);
+
+            //  + , -, 
+            t1 = TimeSpan.FromHours(2) + TimeSpan.FromMinutes(30);
+            bool check = (TimeSpan.FromHours(2) > TimeSpan.FromMinutes(30));
+            t1 = TimeSpan.FromDays(365);
+            Console.WriteLine(t1);
+            Console.WriteLine("totalis gareshe");
+            Console.WriteLine(String.Format("saati : {0}", t1.Hours));
+            Console.WriteLine(String.Format("minutes : {0}", t1.Minutes));
+            ////////
+            Console.WriteLine("total");
+            Console.WriteLine(String.Format("saati : {0}", t1.TotalHours));
+            Console.WriteLine(String.Format("minutes : {0}", t1.TotalMinutes));
+            //  Console.WriteLine(t1);
+        }
+
+        static void TestDateTime()
+        {
+
+
+            DateTime tomorrow = DateTime.Now.AddDays(1);
+            //Console.WriteLine(tomorrow);
+            DateTime yestarday = DateTime.Now.AddDays(-1);
+            DateTime ob = DateTime.Now.AddYears(1);
+            DateTime m = ob.Add(new TimeSpan(10, 2, 30));
+            //Console.WriteLine(DateTime.Now.DayOfWeek); // kviris dge
+            //Console.WriteLine(DateTime.Now.Date);  // Date marto aigo tarigi
+
+            DateTime date = DateTime.Now;
+            DateTime end = new DateTime(2016, 2, 1);
+            while (date < end)
+            {
+                //Console.WriteLine(date);
+                date = date.AddDays(7);
+            }
+            //  dd   -- dge
+            //   d   -- dge ogond 1
+            //  MMMM   --  tve
+            //  yy
+
+
+            var culture = CultureInfo.GetCultureInfo("ka-GE");
+            string s = DateTime.Now.ToString("d/MMMM/yy", culture.DateTimeFormat);
+            Console.WriteLine(s);
+
+
+
+        }
+
 
 
         static void TestParse()
         {
             String s = Console.ReadLine();
 
-            int a ;   //  = int.Parse(s);
-            
-            bool res = int.TryParse(s, out a );
+            int a;   //  = int.Parse(s);
+
+            bool res = int.TryParse(s, out a);
             if (res == true)
             {
                 Console.WriteLine(a + 1);
@@ -37,8 +103,8 @@ namespace Lesson2
             {
                 Console.WriteLine("araswori formati");
             }
-            
-            
+
+
         }
 
         static void TestChar()
@@ -55,8 +121,8 @@ namespace Lesson2
         {
             string s;
             s = "avto";  // s = "avto"
-            s = new string('A', 10  );  // AAAAAAAAAA
-            char[] mas = new[] {'a', 'v', 't', 'o'};
+            s = new string('A', 10);  // AAAAAAAAAA
+            char[] mas = new[] { 'a', 'v', 't', 'o' };
             s = "avto"; // s = "avto"
 
             char a = s[3];   //  a = 'o'
@@ -66,7 +132,7 @@ namespace Lesson2
 
             bool c = s.Contains('l');  // false
             bool d = s.Contains("l");  // false
-              
+
             o = s.StartsWith("avto");  // true
             o = s.StartsWith("rukhadze");  // false
 
@@ -90,6 +156,98 @@ namespace Lesson2
 
 
             Console.WriteLine(s7);
+        }
+
+
+        public static void TestBigInteger()
+        {
+            BigInteger first = new BigInteger("100000000000000000000000000000003453453453");
+            BigInteger secod = new BigInteger("100000000000000000000000000000003453453453");
+            BigInteger jami = BigInteger.Add(first, secod);
+
+            Console.WriteLine(jami.StringValue);
+
+        }
+
+        public static void TestStringBuilder()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < 50; i++) sb.Append(i + ",");
+
+            Console.WriteLine(sb.ToString());  //
+
+            String s2 = "";
+            for (int i = 0; i < 50; i++)
+                s2 = s2 + i + ",";
+            Console.WriteLine(s2); //  
+
+
+        }
+
+        public static void TestVirtualMethod()
+        {
+            // giorgi
+            Student giorgi = new Bachelor();
+            giorgi.Name = "giorgi";
+            giorgi.LastName = "giorgadze";
+            // avto
+            Master master = new Master();
+            master.Name = "avto";
+            master.LastName = "rukhadze";
+            master.Credits = new[] { 100, 50 };  // summary credits 150
+
+            Student avto1 = master;
+
+            Console.WriteLine(avto1.Passed()); // True
+            Master avto2 = master;
+            Console.WriteLine(avto2.Passed()); // True
+
+            Student[] dataBase = new Student[]
+            {
+                new Master() {Credits = new int[] {100, 150}, Name = "avto"},
+                new Bachelor() {Credits = new int[] {200, 50}, Name = "giorgi"},
+                new Master() {Credits = new int[] {100, 150}, Name = "avto"},
+                new Bachelor() {Credits = new int[] {200, 50}, Name = "giorgi"},
+                new Master() {Credits = new int[] {100, 150}, Name = "avto"},
+                new Bachelor() {Credits = new int[] {200, 50}, Name = "giorgi"},
+                new Master() {Credits = new int[] {100, 150}, Name = "avto"},
+                new Bachelor() {Credits = new int[] {200, 50}, Name = "giorgi"},
+            };
+
+
+
+            int res = 0;
+            foreach (var student in dataBase)
+            {
+                if (student.Passed()) res++;
+            }
+            Console.WriteLine(res);
+
+        }
+
+        public static void TestPerson()
+        {
+            Person[] dataBase = new Person[]
+            {
+                new Master() {Credits = new int[] {100, 150}, Name = "avto", LastName = "gvari"},
+                new Bachelor() {Credits = new int[] {200, 50}, Name = "giorgi", LastName = "gvari"},
+                new Master() {Credits = new int[] {100, 150}, Name = "avto", LastName = "gvari"},
+                new Bachelor() {Credits = new int[] {200, 50}, Name = "giorgi", LastName = "gvari"},
+                new Master() {Credits = new int[] {100, 150}, Name = "avto", LastName = "gvari"},
+                new Bachelor() {Credits = new int[] {200, 50}, Name = "giorgi", LastName = "gvari"},
+                new Master() {Credits = new int[] {100, 150}, Name = "avto", LastName = "gvari"},
+                new Bachelor() {Credits = new int[] {200, 50}, Name = "giorgi", LastName = "gvari"},
+                
+                new Lector() { Name = "giorgi", LastName = "gvari"},
+
+            };
+
+
+            foreach (var person in dataBase)
+            {
+                Console.WriteLine(person.displayName("en"));
+            }
+
         }
 
 

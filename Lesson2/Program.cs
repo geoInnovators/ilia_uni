@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +11,81 @@ namespace Lesson2
     {
         static void print(string s)
         {
+            
             Console.WriteLine(s);
         }
 
         static void Main(string[] args)
         {
-            //TestParse(); 
-            TestPerson();  
-
+            //TestTimeSpan();
+            TestDateTime();
             Console.ReadKey();
         }
+
+
+        static void TestTimeSpan()
+        {
+            TimeSpan t1 = new TimeSpan (2, 30, 0);  // orsaatinaxevari
+            //Console.WriteLine(t1 );
+            TimeSpan t2 = new TimeSpan(10,  2, 30, 0);  // orsaatinaxevari
+            //Console.WriteLine(t2);
+            t1 = TimeSpan.FromDays(10);  // ati dge
+         //   Console.WriteLine(t1);
+            t1 = TimeSpan.FromHours(2);  // ati dge
+          //  Console.WriteLine(t1);
+            t1 = TimeSpan.FromMinutes(30);  // ati dge
+           // Console.WriteLine(t1);
+            t1 = TimeSpan.FromSeconds(30);  // ati dge
+           // Console.WriteLine(t1);
+
+            //  + , -, 
+            t1 = TimeSpan.FromHours(2) + TimeSpan.FromMinutes(30);
+            bool check = (TimeSpan.FromHours(2) > TimeSpan.FromMinutes(30));
+            t1 = TimeSpan.FromDays(365);
+            Console.WriteLine(t1);
+            Console.WriteLine("totalis gareshe");
+            Console.WriteLine(String.Format("saati : {0}", t1.Hours));
+            Console.WriteLine(String.Format("minutes : {0}", t1.Minutes));
+            ////////
+            Console.WriteLine("total");
+            Console.WriteLine(String.Format("saati : {0}", t1.TotalHours));
+            Console.WriteLine(String.Format("minutes : {0}", t1.TotalMinutes));
+          //  Console.WriteLine(t1);
+        }
+
+        static void TestDateTime()
+        {
+           
+
+            DateTime tomorrow = DateTime.Now.AddDays(1);
+            //Console.WriteLine(tomorrow);
+            DateTime yestarday = DateTime.Now.AddDays(-1);
+            DateTime ob = DateTime.Now.AddYears(1);
+            DateTime m =  ob.Add(new TimeSpan(10, 2, 30));
+            //Console.WriteLine(DateTime.Now.DayOfWeek); // kviris dge
+            //Console.WriteLine(DateTime.Now.Date);  // Date marto aigo tarigi
+
+            DateTime date = DateTime.Now;
+            DateTime end = new DateTime(2016, 2, 1);
+            while (date < end)
+            {
+                //Console.WriteLine(date);
+                date = date.AddDays(7);
+            }
+            //  dd   -- dge
+            //   d   -- dge ogond 1
+            //  MMMM   --  tve
+            //  yy
+
+
+            var culture = CultureInfo.GetCultureInfo("ka-GE");
+            string s = DateTime.Now.ToString("d/MMMM/yy", culture.DateTimeFormat);
+            Console.WriteLine(s);
+
+
+
+        }
+        
 
 
         static void TestParse()

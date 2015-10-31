@@ -66,7 +66,7 @@ namespace Lesson2
 
             bool c = s.Contains('l');  // false
             bool d = s.Contains("l");  // false
-
+              
             o = s.StartsWith("avto");  // true
             o = s.StartsWith("rukhadze");  // false
 

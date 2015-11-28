@@ -15,17 +15,84 @@ namespace Lesson2
             Console.WriteLine(s);
         }
 
-        static void Main(string[] args)
+        public static int NumberofLectures(String courseName)
         {
-            //TestTimeSpan();
-            TestDateTime();
-            Console.ReadKey();
+            Console.WriteLine(courseName);
+            return 0;
         }
 
+        private static String GetCurrentCourse()
+        {
+            return null;
+        }
 
+        class Lecture
+        {
+            public DayOfWeek Day { get; set; }
+            public TimeSpan StartTime { get; set; }
+            public String CourseName { get; set; }
+
+            public Lecture(DayOfWeek day, TimeSpan startTime, String courseName)
+            {
+                this.Day = day;
+                this.StartTime = startTime;
+                this.CourseName = courseName;
+            }
+        }
+
+        class Schedule
+        {
+            public Lecture[] Lectures { get; set; }
+
+            public Schedule(Lecture[] lectures)
+            {
+                this.Lectures = lectures;
+            }
+
+            public int NumberofLectures(String name)
+            {
+                return 1;
+            }
+
+            public int TotalNumberofLectures(String name)
+            {
+                return 1;
+            }
+
+            public String GetCurrentCourse()
+            {
+                return "";
+            }
+
+
+        }
+
+        static void Main(string[] args)
+        {
+            Lecture[] array = new[]
+            {
+                new Lecture(DayOfWeek.Saturday, TimeSpan.FromHours(9), "C#"),
+                new Lecture(DayOfWeek.Saturday, TimeSpan.FromHours(10), "C#"),
+                new Lecture(DayOfWeek.Saturday, TimeSpan.FromHours(11), "C#"),
+                new Lecture(DayOfWeek.Friday, TimeSpan.FromHours(10), "ASP.NET")
+            };
+            Schedule sc = new Schedule(array);
+            Console.WriteLine(sc.NumberofLectures("C#")); // 3
+            Console.WriteLine(sc.NumberofLectures("ASP.NET")); // 1
+            Console.WriteLine(sc.GetCurrentCourse()); // C#
+        }
         static void TestTimeSpan()
         {
+
+            
+
+            Console.WriteLine (TimeSpan.FromHours(2.5)); // 02:30:00
+            Console.WriteLine(TimeSpan.FromSeconds(10)); // 00:00:10
+
+
+            Console.WriteLine(new TimeSpan(0, 0, 10)); // 00:00:10
             TimeSpan t1 = new TimeSpan(2, 30, 0);  // orsaatinaxevari
+            Console.WriteLine(new TimeSpan(2, 30, 0)); // 02:30:00
             //Console.WriteLine(t1 );
             TimeSpan t2 = new TimeSpan(10, 2, 30, 0);  // orsaatinaxevari
             //Console.WriteLine(t2);

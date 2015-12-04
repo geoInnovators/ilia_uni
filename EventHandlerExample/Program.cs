@@ -25,7 +25,8 @@ namespace EventHandlerExample
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(  "dd");
+            Console.WriteLine("goood");
+            //MessageBox.Show(  "dd");
         }
 
     }

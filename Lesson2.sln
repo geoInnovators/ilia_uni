@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsAndDelegates", "Gen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture_28_11_2015", "Lecture_28_11_2015\Lecture_28_11_2015.csproj", "{8287D7DB-2AAE-49AE-8FE5-8853F8E00CEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{24AC8474-6E0B-4F94-AEDB-CCE0351E7F4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandlerExample", "EventHandlerExample\EventHandlerExample.csproj", "{994A8440-A582-4285-9F20-F1C06489F6E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{8287D7DB-2AAE-49AE-8FE5-8853F8E00CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8287D7DB-2AAE-49AE-8FE5-8853F8E00CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8287D7DB-2AAE-49AE-8FE5-8853F8E00CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24AC8474-6E0B-4F94-AEDB-CCE0351E7F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24AC8474-6E0B-4F94-AEDB-CCE0351E7F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24AC8474-6E0B-4F94-AEDB-CCE0351E7F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24AC8474-6E0B-4F94-AEDB-CCE0351E7F4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{994A8440-A582-4285-9F20-F1C06489F6E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{994A8440-A582-4285-9F20-F1C06489F6E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{994A8440-A582-4285-9F20-F1C06489F6E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{994A8440-A582-4285-9F20-F1C06489F6E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

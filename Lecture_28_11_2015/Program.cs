@@ -30,6 +30,20 @@ namespace Lecture_28_11_2015
             Console.ReadKey();
         }
 
+        public static void TestComparable()
+        {
+            
+
+            Person[] persons = new[]
+            {
+                new Person("a", "b", DateTime.Today ),
+                new Person("a", "b", DateTime.Today ),
+                new Person("a", "b", DateTime.Today )
+            };
+            Array.Sort(persons);
+
+        }
+
         public static void Generic()
         {
             MyList<string> list = new MyList<string>();

@@ -18,12 +18,11 @@ namespace Lecture_28_11_2015
             Name = name;
             LastName = lastname;
             BirthDate = birthday;
-
         }
         #endregion
 
         public int CompareTo(Person other)
-        {
+        {   
             if (this.BirthDate > other.BirthDate) return 1;
             if (this.BirthDate == other.BirthDate) return 0;
             return -1;

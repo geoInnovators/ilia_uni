@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture_28_11_2015", "Lectu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{24AC8474-6E0B-4F94-AEDB-CCE0351E7F4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandlerExample", "EventHandlerExample\EventHandlerExample.csproj", "{994A8440-A582-4285-9F20-F1C06489F6E9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture_05_2015", "Lecture_05_2015\Lecture_05_2015.csproj", "{02977285-4C2D-447A-A075-62527B816D3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "Events\Events.csproj", "{D827CAB0-B790-4723-86AC-A7984E451A5F}"
@@ -51,10 +49,6 @@ Global
 		{24AC8474-6E0B-4F94-AEDB-CCE0351E7F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24AC8474-6E0B-4F94-AEDB-CCE0351E7F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24AC8474-6E0B-4F94-AEDB-CCE0351E7F4F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{994A8440-A582-4285-9F20-F1C06489F6E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{994A8440-A582-4285-9F20-F1C06489F6E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{994A8440-A582-4285-9F20-F1C06489F6E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{994A8440-A582-4285-9F20-F1C06489F6E9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{02977285-4C2D-447A-A075-62527B816D3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{02977285-4C2D-447A-A075-62527B816D3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02977285-4C2D-447A-A075-62527B816D3C}.Release|Any CPU.ActiveCfg = Release|Any CPU

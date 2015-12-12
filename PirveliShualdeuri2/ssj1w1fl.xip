@@ -1,0 +1,82 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PirveliShualdeuri2
+{
+    class TextOperations
+    {
+        public String Text { get; set; }
+        public TextOperations(String text)
+        {
+            Text = text;
+        }
+
+        public String Reverse()
+        {
+            var array = Text.ToCharArray();
+            Array.Reverse(array);
+            var result = new String(array);
+            return result;
+        }
+
+        public int Sentences()
+        {
+            var array = Text.Split('.');
+            return array.Length;
+        }
+    }
+
+    class Person
+    {
+        public String Name { get; set; }
+        public String LastName { get; set; }
+        public DateTime BirthDate { get; set; }
+
+        public Person(String name, String lastName, DateTime birthDate)
+        {
+            Name = name;
+            LastName = lastName;
+            BirthDate = birthDate;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0} {1}", Name, LastName);
+        }
+
+        public static void PrintNearestBd(Person[] array)
+        {
+            DateTime minBd = DateTime.MaxValue;
+            foreach (var person in array)
+            {
+                DateTime personBd = new DateTime(  DateTime.Now.Year, person.BirthDate.Month, person.BirthDate.Day );
+                if (DateTime.Today > personBd)
+                    personBd = personBd.AddYears(1);
+                if (personBd < minBd)
+                    minBd = personBd;
+            }
+
+            foreach (var person in array)
+            {
+                if( person.BirthDate.Month == minBd.Month && person.BirthDate.Day == minBd.Day  )
+                    Console.WriteLine(person);
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Person[] array = new[]
+            {
+                new Person("avto", "rukhadze", new DateTime(1987, 08, 30)),
+                new Person("tornike", "benidze", new DateTime(1987, 07, 07)),
+                new Person("anri", "nishnianidze", new DateTime(1986, 10, 23))
+            };
+        }
+    }
+}

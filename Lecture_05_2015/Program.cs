@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lecture_05_2015
 {
-    class Person
+    class Person : IEquatable<Person>
     {
         public string Name { get; set; }
         public string LastName { get; set; }
@@ -26,6 +26,15 @@ namespace Lecture_05_2015
             }
         }
 
+        public bool Equals(Person other)
+        {
+            return (Name == other.Name) && (LastName == other.LastName);
+        }
+
+        public override int GetHashCode()
+        {
+            return (Name + LastName).GetHashCode();
+        }
     }
 
 
@@ -67,22 +76,23 @@ namespace Lecture_05_2015
 
         static void Main(string[] args)
         {
-            TestSort();
-
-            //TestDelegate a;
-
-            //Program p1 = new Program();
-            //p1.I = 20;
-            //a = Transform2;
-            //Console.WriteLine(a(5));
-
-            //Program p2 = new Program();
-            //p2.I = 25;
-            //a = Transform2;
-            //Console.WriteLine(a(5));
-
-
-
+            //TestSort();
+            var p = new Person("avto", "rukhadze");
+            var p1 = new Person("avto", "rukhadze");
+            Dictionary<Person, int> dict = new Dictionary<Person, int>();
+            dict[p] = 1;
+            dict[p1] = 3;
+            foreach (var item in dict)
+            {
+                Console.WriteLine( item.Key + " " + item.Value  );
+            }
+            int s = 6;
+            s++;
+            int[] a = new int[s];
+            foreach (var i in a)
+            {
+                Console.WriteLine(i);
+            }
         }
 
 

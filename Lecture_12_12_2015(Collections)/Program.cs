@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,48 +27,34 @@ namespace Lecture_12_12_2015_Collections_
                 yield return i;
         }
     }
+
+
+    class MyClass
+    {
+        public String Value;
+
+        public override bool Equals(object obj)
+        {
+            return this.Value == ((MyClass) obj).Value;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Value.GetHashCode();
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            
+            //DateTime first = DateTime.Now;
+            //TestSet();
+            //DateTime second = DateTime.Now;
+            //Console.WriteLine((int) (second - first).TotalSeconds);
+            // TestSet();
 
-            // Array
-            
-
-            int[][] matrica = new int[5][];
-
-            matrica[0] = new int[] {0, 1};  // 2
-            matrica[1] = new int[] {0,1,6,2, 34};  // 5
-            matrica[2] = new int[] {3,1,6};  // 3
-            matrica[3] = new int[] {2,1,6};  // 3
-            matrica[4] = new int[] {};  // 0
-
-            int max = int.MinValue;
-            foreach (var str in matrica)
-            {
-                foreach (var i in str)
-                {
-                    if (i > max)
-                        max = i;
-                }
-            }
-            Console.WriteLine(max);
-
-
-            int[,,] matrica1 = new int[10,10,10];
-            //Console.WriteLine(matrica1[0,1,2]);
-            
-
-            // 6, 1
-            //Console.WriteLine(matrica[0][2]);
-            int[] a = { 1, 2, 3 };
-            Array.Sort(a);  //
-            Array.Reverse(a);  // {  3, 2, 1  }
-            string[] b = {"abb", "ccc", "ddd"};
-            string[] s = (string[])b.Clone();
-
-            
+            TestDict();
 
             Console.ReadKey();
         }
@@ -90,7 +78,100 @@ namespace Lecture_12_12_2015_Collections_
 
             Console.ReadKey();            
         }
+
+        public static void TestContains()
+        {
+            List<MyClass> list = new List<MyClass>();
+
+            MyClass ob1 = new MyClass();
+            ob1.Value = "home";
+
+            MyClass ob2 = new MyClass();
+            ob2.Value = "home";
+
+            list.Add(ob1);
+
+            Console.WriteLine(list.Contains(ob1)); //1 
+
+            Console.WriteLine(list.Contains(ob2)); //2 
+
+
+        }
+
+
+        public static void TestList()
+        {
+            int[] mas = new int[100000];
+            Random random = new Random(1000000);
+
+            for (int i = 0; i < mas.Length; i++)
+            {
+                mas[i] = random.Next(1000000);
+            }
+
+            List<int> result = new List<int>();
+
+            foreach (var word in mas)
+            {
+                if (!result.Contains(word))
+                {
+                    result.Add( word );
+                }
+            }
+
+
+            Console.WriteLine(result.Count);
+
+
+        }
+
+        public static void TestSet()
+        {
+            int[] mas = new int[100000];
+            Random random = new Random(1000000);
+            for (int i = 0; i < mas.Length; i++)
+            {
+                mas[i] = random.Next(1000000);
+            }
+
+            HashSet<int> result = new HashSet<int>();
+
+
+            foreach (var i in mas)
+            {
+                result.Add(i);
+            }
+
+            Console.WriteLine(result.Count);
+        }
+
+        public static void TestDict()
+        {
+            string[] words = {"home", "child", "home", "child", "me"};
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+
+            foreach (var word in words)
+            {
+                if (dict.ContainsKey(word))
+                    dict[word]++;
+                else
+                    dict[word] = 1; //  dict.Add(word, 1);
+            }
+
+            foreach (var val in dict)
+            {
+                Console.WriteLine(  val.Key + "  " + val.Value  );
+            }
+
+        }
+
     }
 
 
 }
+
+//  IEnumerable  --> enumerator
+        // foreach
+//  ICollection  --> Count, 
+//  IList        --> [] 
+       // Array, List<>

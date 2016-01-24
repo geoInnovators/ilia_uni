@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16_01_2016", "16_01_2016\16_01_2016.csproj", "{DA2A9F66-7E46-4713-ADBB-985F7AB2DED7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exam", "Exam\Exam.csproj", "{0CFABEDA-E532-4579-8A18-C552EC6666FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{DA2A9F66-7E46-4713-ADBB-985F7AB2DED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA2A9F66-7E46-4713-ADBB-985F7AB2DED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA2A9F66-7E46-4713-ADBB-985F7AB2DED7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CFABEDA-E532-4579-8A18-C552EC6666FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CFABEDA-E532-4579-8A18-C552EC6666FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CFABEDA-E532-4579-8A18-C552EC6666FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CFABEDA-E532-4579-8A18-C552EC6666FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

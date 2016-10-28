@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson2", "Lesson2\Lesson2.csproj", "{4548359B-7311-4EB1-A547-1B01B74313E7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PirveliShualeduri", "PirveliShualeduri\PirveliShualeduri.csproj", "{3D05223D-50FF-44E0-8830-352687CC10FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PirveliShualdeuri2", "PirveliShualdeuri2\PirveliShualdeuri2.csproj", "{B0055702-43EF-483C-BB8C-45F3F4F6BF59}"
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4548359B-7311-4EB1-A547-1B01B74313E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4548359B-7311-4EB1-A547-1B01B74313E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4548359B-7311-4EB1-A547-1B01B74313E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4548359B-7311-4EB1-A547-1B01B74313E7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3D05223D-50FF-44E0-8830-352687CC10FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3D05223D-50FF-44E0-8830-352687CC10FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D05223D-50FF-44E0-8830-352687CC10FA}.Release|Any CPU.ActiveCfg = Release|Any CPU

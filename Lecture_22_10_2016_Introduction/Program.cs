@@ -3,45 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommonClasses;
 
 namespace Lecture_22_10_2016_Introduction
 {
-    class Student
-    {
-        public string Name;
 
-        public string LastName;
-
-        public int Age;
-
-        public string PersonalId;
-        // constcutor
-        public Student(string name, string lastname)
-        {
-            Name = name;
-            LastName = lastname;
-        }
-        public Student(string name, string lastname, int age)
-        {
-            Name = name;
-            LastName = lastname;
-            Age = age;
-        }
-        // methods
-        public string IsStudentGeorgian()
-        {
-            if (PersonalId.Length == 11)
-                return "yes";
-            return "no";
-        }
-
-        public string GetPersonName()
-        {
-            return Name + " " + LastName;
-        }
-
-
-    }
 
     class Program
     {
@@ -51,7 +17,8 @@ namespace Lecture_22_10_2016_Introduction
             avto = new Student("avtandil", "rukhadze"); // 2. cvladze obieqtis minicheba
             avto.PersonalId = "600034534534";
 
-            Console.WriteLine(avto.IsStudentGeorgian()); // no
+            Console.WriteLine(avto.IsStudentGeorgianProrety); // no
+            avto.IsStudentGeorgianProrety = "yes";
             Console.WriteLine(avto.GetPersonName()); // avtandil rukhadze
 
 
@@ -60,7 +27,7 @@ namespace Lecture_22_10_2016_Introduction
             students[0] = new Student("avtandil", "rukhadze", 30);
             students[1] = new Student("davit", "mgeladze", 20);
             students[2] = new Student("tamar", "nodia", 25);
-
+            
             Console.WriteLine(GetOldestStudent(students).GetPersonName());
             // avtandil rukhadze
 

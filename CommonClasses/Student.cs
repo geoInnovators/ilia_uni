@@ -13,13 +13,14 @@ namespace CommonClasses
         Phd
     }
 
-    public class Student
+    public class Student : Person
     {
+        public override string GetFullName()
+        {
+            return string.Format("student {0} {1}", Name, LastName);
+        }
+
         #region fields
-        public string Name;
-        public string LastName; 
-        public int Age; 
-        public string PersonalId; 
 
         private string _isGeorgian;
 

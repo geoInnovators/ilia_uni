@@ -15,7 +15,7 @@ namespace PirveliShualeduri
     }
 
     class Schedule
-    {
+    { 
         public Lecture[] Lectures { get; set; }
 
         public Schedule(Lecture[] lectures)

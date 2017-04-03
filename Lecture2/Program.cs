@@ -17,7 +17,7 @@ namespace Lecture2
             Person p = new Person("avto", "rukhadze", PersonType.Lecturer);
             Console.WriteLine((int)p.PersonT); // 0
             Console.WriteLine(p.GetFullName);
-            Console.ReadLine();
+            Console.ReadLine(); 
 
             p.PersonT = PersonType.Student; // minicheba
             Console.WriteLine(p.Name);

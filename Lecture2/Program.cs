@@ -11,7 +11,7 @@ namespace Lecture2
         static void Print(string a)
         {
             Console.WriteLine(a);
-        }
+        } 
         static void Main(string[] args)
         {
             Person p = new Person("avto", "rukhadze", PersonType.Lecturer);

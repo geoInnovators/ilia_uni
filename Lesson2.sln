@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture5_Collections", "Lec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture6_ExceptionHandling", "Lecture6_ExceptionHandling\Lecture6_ExceptionHandling.csproj", "{3E717C06-C85E-4370-B160-6E7033402E89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture7_Generics", "Lecture7_Generics\Lecture7_Generics.csproj", "{D707AF90-8609-46C1-9229-43E9D69AEC5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{3E717C06-C85E-4370-B160-6E7033402E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E717C06-C85E-4370-B160-6E7033402E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E717C06-C85E-4370-B160-6E7033402E89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D707AF90-8609-46C1-9229-43E9D69AEC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D707AF90-8609-46C1-9229-43E9D69AEC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D707AF90-8609-46C1-9229-43E9D69AEC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D707AF90-8609-46C1-9229-43E9D69AEC5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
